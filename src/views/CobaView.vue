@@ -17,6 +17,9 @@
     computed: {
       publishedBooks() {
         return this.author.books.length > 0 ? 'YES' : 'NO'
+      },
+      jikaYa() {
+        return this.author.books.length
       }
     },
     methods: {
@@ -40,22 +43,14 @@
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <h2>Barang di keranjang ada {{ keranjang }}</h2>
-    <button @click="increment">Tambah Ke keranjang</button>
-    <button @click="decrement">Kurangi Ke keranjang</button>
-    <button @click="resest">Reset</button>
-    <span>{{ publishedBooks }}</span>
-  </div>
+    <div>
+        <h1>This is an about page</h1>
+        <h2>Barang di keranjang ada {{ keranjang }}</h2>
+        <button @click="increment">Tambah Ke keranjang</button>
+        <button @click="decrement">Kurangi Ke keranjang</button>
+        <div class="flex">
+            <h2>Apakah {{ author.name }} memiliki buku ?</h2>
+            <span>{{ publishedBooks }} | Jumlah buku {{ author.name }} ada {{ author.books.length }} buah</span>
+        </div> 
+    </div>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
