@@ -10,7 +10,13 @@
             'vue 2',
             'vye 3'
           ]
-        }
+        },
+        styleObject: {
+          color: 'green',
+          fontSize: '50px'
+        },
+        isActive: false,
+        error: null
       }
     },
 
@@ -20,6 +26,12 @@
       },
       jikaYa() {
         return this.author.books.length
+      },
+      classObject() {
+        return {
+          active: this.isActive && !this.error,
+          'text-danger': this.error && this.error.type === 'Fatal'
+        }
       }
     },
     methods: {
@@ -50,7 +62,10 @@
         <button @click="decrement">Kurangi Ke keranjang</button>
         <div class="flex">
             <h2>Apakah {{ author.name }} memiliki buku ?</h2>
-            <span>{{ publishedBooks }} | Jumlah buku {{ author.name }} ada {{ author.books.length }} buah</span>
-        </div> 
+            <span>{{ publishedBooks }} | Jumlah buku {{ author.name }} ada {{ jikaYa }} buah</span>
+        </div>
+
+        <h2 :style="styleObject">Style Binding</h2>
+        <h2 :class="classObject">Class Binding</h2>
     </div>
 </template>
