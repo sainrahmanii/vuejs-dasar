@@ -27,7 +27,3 @@ npm run dev
 ```sh
 npm run build
 ```
-
-```sh
-cobain punyaku
-```
