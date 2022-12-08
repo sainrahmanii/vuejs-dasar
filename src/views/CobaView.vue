@@ -17,7 +17,15 @@
         },
         isActive: false,
         error: null,
-        awesome: true
+        awesome: true,
+        buah: [
+          "Mangga",
+          "Anggur",
+          "Apel",
+          "Pir",
+          "Melon",
+          "Semangka"
+        ]
       }
     },
 
@@ -33,6 +41,9 @@
           active: this.isActive && !this.error,
           'text-danger': this.error && this.error.type === 'Fatal'
         }
+      },
+      shortBuah() {
+        return this.buah.sort()
       }
     },
     methods: {
@@ -76,5 +87,8 @@
         <h1 v-if="awesome">Vue is awesome</h1>
         <h1 v-else>Oh noooo!!</h1>
 
+        <h2 v-for="item in shortBuah">
+          {{ item }}
+        </h2>
     </div>
 </template>
