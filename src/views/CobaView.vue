@@ -8,7 +8,7 @@
           books: [
             'vue',
             'vue 2',
-            'vye 3'
+            'vue 3'
           ]
         },
         styleObject: {
@@ -16,7 +16,8 @@
           fontSize: '50px'
         },
         isActive: false,
-        error: null
+        error: null,
+        awesome: true
       }
     },
 
@@ -44,6 +45,9 @@
       },
       reset() {
         this.keranjang = 0
+      },
+      changeAwesome() {
+        this.awesome = !this.awesome
       }
     },
     mounted() {
@@ -59,7 +63,7 @@
         <h1>This is an about page</h1>
         <h2>Barang di keranjang ada {{ keranjang }}</h2>
         <button @click="increment">Tambah Ke keranjang</button>
-        <button @click="decrement">Kurangi Ke keranjang</button>
+        <button @click="decrement">Kurangi dari keranjang</button>
         <div class="flex">
             <h2>Apakah {{ author.name }} memiliki buku ?</h2>
             <span>{{ publishedBooks }} | Jumlah buku {{ author.name }} ada {{ jikaYa }} buah</span>
@@ -67,5 +71,10 @@
 
         <h2 :style="styleObject">Style Binding</h2>
         <h2 :class="classObject">Class Binding</h2>
+
+        <button @click="changeAwesome()">CKick This</button>
+        <h1 v-if="awesome">Vue is awesome</h1>
+        <h1 v-else>Oh noooo!!</h1>
+
     </div>
 </template>
