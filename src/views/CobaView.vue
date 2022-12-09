@@ -51,6 +51,9 @@
       increment() {
         this.keranjang++
       },
+      say(message){
+        alert(message)
+      },
       decrement() {
         this.keranjang--
       },
@@ -83,12 +86,16 @@
         <h2 :style="styleObject">Style Binding</h2>
         <h2 :class="classObject">Class Binding</h2>
 
-        <button @click="changeAwesome()">CKick This</button>
+        <button @click="changeAwesome()">Click This</button>
         <h1 v-if="awesome">Vue is awesome</h1>
         <h1 v-else>Oh noooo!!</h1>
 
-        <h2 v-for="item in shortBuah">
-          {{ item }}
-        </h2>
+        <!-- <h2 v-for="(item, index) in shortBuah">
+          {{ index }} {{ item }}
+        </h2> -->
+
+        <button @click="say('Hi!')">Say Hi!</button>
+
+        <!-- <button v-show="changeAwesome()">Klik</button> -->
     </div>
 </template>
