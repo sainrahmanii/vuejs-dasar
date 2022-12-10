@@ -1,7 +1,10 @@
 <script>
+  import ButtonVue from '@/components/Button.vue'
+
   export default {
     data() {
       return {
+        msg: 'SUBMIT',
         keranjang : 0,
         author: {
           name: 'Husain Rahmani',
@@ -38,6 +41,9 @@
         message: '',
         checkNames: [],
       }
+    },
+    components: {
+      ButtonVue
     },
 
     computed: {
@@ -126,5 +132,9 @@
 
         <input type="checkbox" id="mike" value="Mike" v-model="checkNames">
         <label for="mike">Mike</label>
+        <br>
+        <button-vue >
+          {{ author.name }}
+        </button-vue>
     </div>
 </template>
