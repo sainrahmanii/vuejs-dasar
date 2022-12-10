@@ -25,7 +25,18 @@
           "Pir",
           "Melon",
           "Semangka"
-        ]
+        ],
+        selected: 'A',
+        options: [
+          {text: 'One', value: 'A'},
+          {text: 'Two', value: 'B'},
+          {text: 'Three', value: 'C'},
+          {text: 'Four', value: 'D'},
+          {text: 'Five', value: 'E'},
+          {text: 'Six', value: 'F'},
+        ],
+        message: '',
+        checkNames: [],
       }
     },
 
@@ -96,6 +107,24 @@
 
         <button @click="say('Hi!')">Say Hi!</button>
 
-        <!-- <button v-show="changeAwesome()">Klik</button> -->
+        <select v-model="selected">
+          <option v-for="option in options" :value="option.value">
+            {{ option.text }}
+          </option>
+        </select>
+
+        <p>Message is: {{ message }}</p>
+        <textarea v-model="message" placeholder="Tuliskan disini"></textarea>
+
+        <div>Checked names: {{ checkNames }}</div>
+
+        <input type="checkbox" id="jack" value="Jack" v-model="checkNames">
+        <label for="jack">Jack</label>
+
+        <input type="checkbox" id="john" value="John" v-model="checkNames">
+        <label for="john">John</label>
+
+        <input type="checkbox" id="mike" value="Mike" v-model="checkNames">
+        <label for="mike">Mike</label>
     </div>
 </template>
