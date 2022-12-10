@@ -90,7 +90,8 @@
 </script>
 
 <template>
-    <div>
+    <main>
+      <div>
         <h1>This is an about page</h1>
         <h2>Barang di keranjang ada {{ keranjang }}</h2>
         <button @click="increment">Tambah Ke keranjang</button>
@@ -137,4 +138,5 @@
           {{ author.name }}
         </button-vue>
     </div>
+    </main>
 </template>
